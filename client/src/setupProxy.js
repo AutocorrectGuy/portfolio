@@ -4,7 +4,7 @@ module.exports = function (app) {
     '/api',
     createProxyMiddleware({
       target: process.env.TEST === undefined
-        ? "https://qrkodi.herokuapp.com" 
+        ? "https://martinssturainis.herokuapp.com" 
         : "http://localhost:3000",
       changeOrigin: true,
     })

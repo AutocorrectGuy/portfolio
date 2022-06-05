@@ -13,7 +13,7 @@ const authRouter = require("./routes/authorization.routes");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-const whitelist = ['http://localhost:3000', `http://localhost:${PORT}`,  'https://qrkodi.herokuapp.com']
+const whitelist = ['http://localhost:3000', `http://localhost:${PORT}`,  'https://martinssturainis.herokuapp.com']
 const corsConfig = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1 || !origin) callback(null, true)
@@ -31,7 +31,7 @@ app.use(cors(corsConfig));
 app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', process.env.NODE_ENV === "development"
     ? "http://localhost:3000"      // react main port;
-    : "https://qrkodi.herokuapp.com") //current main domain
+    : "https://martinssturainis.herokuapp.com") //current main domain
   res.header('Access-Control-Allow-Credentials', true);
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
