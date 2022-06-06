@@ -6,36 +6,48 @@ export default function Footer() {
       <div className="flex flex-col justify-end gap-10 max-w-xl mx-auto h-full">
         <div className="flex max-w-xl w-full justify-around">
           <div className="flex gap-10">
-          <img src="https://avatars.githubusercontent.com/u/71926334?v=4" className="rounded-full w-24 h-24"/>
-            
-          <table className="table">
-            <tbody>
-              <tr className="table-row">
-                <td className="table-cell">
-                  <p className="text-sky-100 whitespace-nowrap font-bold">Lapas epasts:</p>
-                </td>
-                <td className="table-cell">
-                  <p className="text-sky-50 whitespace-nowrap cursor-pointer hover:text-sky-900">martins.sturainis.html@gmail.com</p>
-                </td>
-              </tr>
-              <tr className="table-row">
-                <td className="table-cell">
-                  <p className="text-sky-100 whitespace-nowrap font-bold pr-6">Personīgais epasts:</p>
-                </td>
-                <td className="table-cell">
-                  <p className="text-sky-50 whitespace-nowrap cursor-pointer hover:text-sky-900">martins.sturainis.lspa@gmail.com</p>
-                </td>
-              </tr>
-              <tr className="table-row">
-                <td className="table-cell">
-                  <p className="text-sky-50 whitespace-nowrap font-bold">Tālrunis:</p>
-                </td>
-                <td className="table-cell">
-                  <p className="text-white whitespace-nowrap cursor-pointer hover:text-sky-900">+371 28 924 782</p>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            <img src="https://avatars.githubusercontent.com/u/71926334?v=4" className="rounded-full w-24 h-24" />
+
+            <table className="table">
+              <tbody>
+                <tr className="table-row">
+                  <td className="table-cell">
+                    <p className="text-sky-100 whitespace-nowrap font-bold">Lapas epasts:</p>
+                  </td>
+                  <td className="table-cell">
+                    <p className="text-sky-50 whitespace-nowrap cursor-pointer hover:text-sky-900">martins.sturainis.html@gmail.com</p>
+                  </td>
+                </tr>
+                <tr className="table-row">
+                  <td className="table-cell">
+                    <p className="text-sky-100 whitespace-nowrap font-bold pr-6">Personīgais epasts:</p>
+                  </td>
+                  <td className="table-cell">
+                    <p className="text-sky-50 whitespace-nowrap cursor-pointer hover:text-sky-900">martins.sturainis.lspa@gmail.com</p>
+                  </td>
+                </tr>
+                <tr className="table-row">
+                  <td className="table-cell">
+                    <p className="text-sky-50 whitespace-nowrap font-bold">Tālrunis:</p>
+                  </td>
+                  <td className="table-cell">
+                    <p className="text-white whitespace-nowrap cursor-pointer hover:text-sky-900">+371 28 924 782</p>
+                  </td>
+                </tr>
+                <tr className="table-row">
+                  <td className="table-cell">
+                    <p className="text-sky-100 whitespace-nowrap font-bold pr-6">Lapas source code:</p>
+                  </td>
+                  <td className="table-cell">
+                    <a href="https://github.com/AutocorrectGuy/portfolio"
+                      target="_blank" rel="noreferrer"
+                      className="text-sky-50 whitespace-nowrap cursor-pointer hover:text-sky-900">
+                      https://github.com/AutocorrectGuy/portfolio
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
           <IconsBar parentStyleClass={"flex items-center gap-6"} styleClass={"w-16 h-16 text-white hover:text-sky-900 duration-200 ease-in-out"} />
         </div>

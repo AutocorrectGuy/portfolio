@@ -3,6 +3,7 @@ import { useEffect, useState, useRef, useContext } from "react";
 import Footer from "../../Partials/Footer";
 import NavTopComponent from "../../Partials/navbar/NavTopComponent";
 import MainBody from "./MainBody";
+import Messenger from "../../Partials/Messenger";
 
 
 export default function MainComponent() {
@@ -25,6 +26,7 @@ export default function MainComponent() {
       <NavTopComponent />
       <MainBody />
       <Footer />
+      <Messenger />
     </div>
   )
 }
