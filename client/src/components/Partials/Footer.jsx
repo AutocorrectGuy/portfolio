@@ -5,6 +5,9 @@ export default function Footer() {
     <div className="w-full min-h-[240px] bg-sky-600 pt-[50px]">
       <div className="flex flex-col justify-end gap-10 max-w-xl mx-auto h-full">
         <div className="flex max-w-xl w-full justify-around">
+          <div className="flex gap-10">
+          <img src="https://avatars.githubusercontent.com/u/71926334?v=4" className="rounded-full w-24 h-24"/>
+            
           <table className="table">
             <tbody>
               <tr className="table-row">
@@ -33,6 +36,7 @@ export default function Footer() {
               </tr>
             </tbody>
           </table>
+          </div>
           <IconsBar parentStyleClass={"flex items-center gap-6"} styleClass={"w-16 h-16 text-white hover:text-sky-900 duration-200 ease-in-out"} />
         </div>
         <div className="flex justify-between text-sky-100 text-center py-5 border-t border-t-sky-700 text-sm font-light">
