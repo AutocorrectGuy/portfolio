@@ -28,3 +28,13 @@
   10% { transform: translate(1px, -2px) rotate(-1deg); }
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
+
+@keyframes scroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(calc(-15 * 150px))}
+}
+.slide-track {
+	animation: scroll 40s linear infinite;
+	display: flex;
+	width: calc(15 * 150px);
+}

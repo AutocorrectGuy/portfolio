@@ -12,14 +12,16 @@ export default function DonateButton({ w, h, color, hoverColor, maxH }) {
   const buttonRef = useRef(null);
   const buttonId = useMemo(() => `ID-${generateId()}`, []);
   const size = useRef(null);
-  const colors = useRef(null);
 
   useEffect(() => {
+    console.log("w: ", w)
+    console.log("h: ", h)
+    console.log("color: ", color)
+    console.log("hover: ", hoverColor)
     size.current = {
       x: parseInt(w.replace("w-", "")) * 4,
       y: parseInt(h.replace("h-", "")) * 4,
     }
-
 
     window.PayPal.Donation.Button({
       env: 'production',

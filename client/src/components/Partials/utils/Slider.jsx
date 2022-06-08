@@ -1,11 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGraduationCap, faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
-import React from "react";
+import { useContext } from "react";
 import Slider from "react-slick";
 import { schoolsData } from "../../../SchoolsData"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import StatesContext from "../../../context/StatesContext";
 
 export default function SimpleSlider() {
   var settings = {
@@ -19,11 +19,13 @@ export default function SimpleSlider() {
     lazyLoad: true,
   };
 
+  const { mode: { darkMode } } = useContext(StatesContext);
+
   function SliderImage({ cardData }) {
     const { color, color2, color3, imgUrl, school, course, started, finished, done, comment } = cardData;
 
     return (
-      <div className={`flex w-full justify-between h-[500px]`}
+      <div className={`${!darkMode && "translate-x-px"} flex w-full justify-between h-[500px]`}
         style={{backgroundColor: color}}>
         <div className="relative flex w-full items-center px-10">
           <div className=" flex flex-col gap-2 px-2">
@@ -33,7 +35,7 @@ export default function SimpleSlider() {
               {course}
             </p>
             <div className="flex gap-2 items-center" style={{ color: color3 }}>
-              <FontAwesomeIcon icon={faGraduationCap} className={" w-4 h-4"} />
+              <FontAwesomeIcon icon={faGraduationCap} className={"w-4 h-4"} />
               <p className="text-2xl leading-8">{school}</p>
             </div>
             <div className="absolute left-2 bottom-2 flex gap-2 items-center" style={{ color: color3 }}>
@@ -50,7 +52,11 @@ export default function SimpleSlider() {
           </div>
         </div>
 
-        <div className="flex max-w-[350px] w-full py-auto px-10 bg-white">
+        <div className={`
+          ${darkMode
+            ? school === "Alberta koledža" ? "bg-neutral-500" : "bg-neutral-300"
+            : school === "Alberta koledža" ? "bg-neutral-300" : "bg-white"} 
+           flex max-w-[350px] w-full py-auto px-10`}>
           <div className="flex relative pb-[100%] max-w-[350px] w-full">
             <div className="absolute flex top-0 left-0 items-center justify-center w-full h-full">
               <img src={imgUrl} className={"max-w-[350px] w-full h-fit"} />

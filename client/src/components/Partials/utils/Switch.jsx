@@ -1,11 +1,19 @@
-import { useState } from "react";
+import { useRef, useState, useContext, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
+import { useCookies } from "react-cookie"
+import StatesContext from "../../../context/StatesContext";
 
 function Switch() {
 
-  const [toggle, setToggle] = useState(true);
+  const {mode: {darkMode, setDarkMode}} = useContext(StatesContext);
+  const value = useContext(StatesContext);
+  const [cookie, setCookie, removeCookie] = useCookies(['context-cookie']);
   const toggleClass = " transform translate-x-5";
+
+  useEffect(() => {
+    console.log(value)
+  }, [])
 
   return (
     <>
@@ -13,21 +21,27 @@ function Switch() {
         {/*   Switch Container */}
         <div
           className={`
-            ${toggle ? `bg-sky-200` : "bg-neutral-700"} 
-            w-[42px] h-[22px] flex items-center rounded-full cursor-pointer px-[1px]`}
+            ${darkMode ? "bg-neutral-700" : `bg-sky-200`} 
+            w-[42px] h-[22px] flex items-center rounded-full cursor-pointer px-[1px] overflow-hidden`}
           onClick={() => {
-            setToggle(!toggle);
+            setDarkMode(() => {
+              console.log("Mode changed from " + darkMode + " to " + !darkMode)
+              return !darkMode;
+            });
+            // let newCookie = cookie["context-cookie"];
+            // newCookie.lightMode = !toggle;
+            // setCookie("context-cookie", newCookie)
           }}
         >
           {/* Switch */}
 
           <div
             className={
-              `${toggle ? `${toggleClass} bg-sky-600` : "bg-white"} flex items-center justify-center h-5 w-5 rounded-full border border-transparent shadow-md transform duration-300 ease-in-out`
+              `${darkMode ? `${toggleClass} bg-sky-600` : "bg-white shadow-md shadow-neutral-500"} flex items-center justify-center h-5 w-5 rounded-full border border-transparent shadow-md transform duration-300 ease-in-out`
             }
           >
-            <FontAwesomeIcon icon={toggle ? faSun : faMoon} 
-              className={`${toggle ? "text-white" : "text-black bg-neutral-200 w-[14px] h-[14px]"} transform duration-300 ease-in-out rounded-full`}
+            <FontAwesomeIcon icon={darkMode ? faMoon : faSun} 
+              className={`${darkMode ? "text-white" : "text-black bg-neutral-200 w-[14px] h-[14px]"} transform duration-300 ease-in-out rounded-full`}
             />
           </div>
         </div>

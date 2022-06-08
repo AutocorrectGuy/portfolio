@@ -1,19 +1,20 @@
-import { useEffect, useState, useRef, useContext } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGraduationCap, faCheck, faTimes, faCalendarAlt } from "@fortawesome/free-solid-svg-icons";
+import { useContext } from "react";
 import Slider from "../../Partials/utils/Slider";
-import { schoolsData } from "../../../SchoolsData"
 import EducationGrid from "./EducationGrid";
-import ITSkillsGrid from "./ITSkillsGrid";
+import UsedTechScroller from "./UsedTechScroller";
+import StatesContext from "../../../context/StatesContext";
 
 export default function MainBody() {
+  
+  const { mode: { darkMode } } = useContext(StatesContext);
 
   return (
-    <div className="flex flex-col max-w-xl w-full h-full mx-auto mt-8 p-4
-      justify-between rounded-t-md bg-white border border-neutral-200">
+    <div className={`${darkMode ? "bg-neutral-800 border-neutral-800" : "bg-white border-neutral-200"}
+    border flex flex-col max-w-xl w-full h-full mx-auto mt-8 p-4 justify-between rounded-t-md`
+    }>
       <Slider />
       <EducationGrid />
-      <ITSkillsGrid />
+      <UsedTechScroller />
     </div>
   )
 }

@@ -1,7 +1,12 @@
+import { useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome, faSearch, faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import StatesContext from "../../../context/StatesContext";
 
 export default function ThirdRow() {
+
+  const { mode: { darkMode } } = useContext(StatesContext);
+
   const navButtonsList = [
     { name: "", isDropdown: false, icon: faHome },
     { name: "Skola", isDropdown: true },
@@ -40,7 +45,8 @@ export default function ThirdRow() {
   }
 
   return (
-    <div className="flex max-w-xl w-full h-16 justify-between mx-auto bg-sky-500 shadow-md shadow-neutral-300 rounded-md">
+    <div className={`${darkMode ? "shadow-[#101010] bg-neutral-800" : "shadow-neutral-300 bg-sky-500"} 
+    flex max-w-xl w-full h-16 justify-between mx-auto shadow-md rounded-md`}>
       <div className="flex justify-between">
         {
           navButtonsList.map(({ name, isDropdown, icon }, i) =>
