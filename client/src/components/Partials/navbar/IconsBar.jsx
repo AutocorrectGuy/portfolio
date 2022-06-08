@@ -18,13 +18,13 @@ export default function IconsBar({ styleClass, parentStyleClass }) {
       <a href={"https://github.com/AutocorrectGuy/portfolio"} target="_blank" rel="noreferrer">
         <FontAwesomeIcon icon={faGithub} className={`cursor-pointer ${styleClass}`} />
       </a>
-      {/* <DonateButton
+      <DonateButton
         w={styleClass.split(" ")[0]}
         h={styleClass.split(" ")[1]}
         color={styleClass.split(" ")[2]}
         hoverColor={styleClass.split(" ")[3]}
         maxH={styleClass.split(" ")[4]}
-      /> */}
+      />
     </div>
   )
 }
