@@ -4,7 +4,8 @@ import Footer from "../../Partials/Footer";
 import NavTopComponent from "../../Partials/navbar/NavTopComponent";
 import MainBody from "./MainBody";
 import Messenger from "../../Partials/Messenger";
-
+//https://pattern.monster/hexagon-5/
+import bgImage from "../../../assets/pattern2.png"
 
 export default function MainComponent() {
   useEffect(() => {
@@ -18,7 +19,7 @@ export default function MainComponent() {
   return (
     <div className="flex flex-col w-full min-h-screen ml-auto bg-left-top"
       style={{
-        backgroundImage: "url(https://barkava.jak.lv/site/assets/images/jak_bg_triangle.png)",
+        backgroundImage: `url(${bgImage})`,
         backgroundPositionX: "50%",
         backgroundRepeat: "repeat"
       }}

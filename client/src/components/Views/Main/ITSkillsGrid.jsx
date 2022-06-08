@@ -95,15 +95,15 @@ export default function ITSkillsGrid() {
                     typeof (items) !== undefined &&
                     items.map(({ name, items }, j) => {
                       return (
-                        <div className="pl-4">
+                        <div  key={`cell-lvl-1-${j}`} className="pl-4">
                           <div className="text-purple-600 font-semibold">
                             {name}
                           </div>
                           {
                             items !== undefined &&
-                            items.map(({ name, items }) => {
+                            items.map(({ name, items }, k) => {
                               return (
-                                <div className="pl-4 flex flex-col">
+                                <div  key={`cell-lvl-2-${k}`} className="pl-4 flex flex-col">
                                   <div className="text-neutral-700 text-base italic">
                                     {name}
                                   </div>

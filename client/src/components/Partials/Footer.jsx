@@ -1,13 +1,17 @@
 import IconsBar from "./navbar/IconsBar";
+import bgImage from "../../assets/pattern2.png"
 
 export default function Footer() {
   return (
-    <div className="w-full min-h-[240px] bg-sky-600 pt-[50px]">
+    <div className="relative w-full min-h-[240px] pt-[50px] bg-sky-500"
+    >
+      <div className="absolute w-full h-full top-0 left-0 opacity-5 pointer-events-none"
+        style={{backgroundImage: `url(${bgImage})`}}
+      ></div>
       <div className="flex flex-col justify-end gap-10 max-w-xl mx-auto h-full">
-        <div className="flex max-w-xl w-full justify-around">
+        <div className="z-10 flex max-w-xl w-full justify-around">
           <div className="flex gap-10">
             <img src="https://avatars.githubusercontent.com/u/71926334?v=4" className="rounded-full w-24 h-24" />
-
             <table className="table">
               <tbody>
                 <tr className="table-row">
@@ -49,9 +53,9 @@ export default function Footer() {
               </tbody>
             </table>
           </div>
-          <IconsBar parentStyleClass={"flex items-center gap-6"} styleClass={"w-16 h-16 text-white hover:text-sky-900 duration-200 ease-in-out"} />
+          <IconsBar parentStyleClass={"flex items-center gap-6"} styleClass={"w-16 h-16 text-white hover:text-sky-900 max-h-[64px] duration-200 ease-in-out"} />
         </div>
-        <div className="flex justify-between text-sky-100 text-center py-5 border-t border-t-sky-700 text-sm font-light">
+        <div className="z-10 flex justify-between text-sky-100 text-center py-5 border-t border-t-sky-700 text-sm font-light">
           <p>Mārtiņš Stūrainis, 2022</p>
           <p>{`Lapa pēdējo reizi atjaunota 2022. gada 6. jūnijā (V. 0.01)`}</p>
         </div>

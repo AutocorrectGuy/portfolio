@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faFacebookMessenger, faGithub, faDiscord, faYoutube } from '@fortawesome/free-brands-svg-icons'
+import DonateButton from "../utils/DonateButton";
 
 export default function IconsBar({ styleClass, parentStyleClass }) {
   return (
@@ -16,6 +17,13 @@ export default function IconsBar({ styleClass, parentStyleClass }) {
       <a href={"https://github.com/AutocorrectGuy"} target="_blank" rel="noreferrer">
         <FontAwesomeIcon icon={faGithub} className={`cursor-pointer ${styleClass}`} />
       </a>
+      <DonateButton
+        w={styleClass.split(" ")[0]}
+        h={styleClass.split(" ")[1]}
+        color={styleClass.split(" ")[2]}
+        hoverColor={styleClass.split(" ")[3]}
+        maxH={styleClass.split(" ")[4]}
+      />
     </div>
   )
 }

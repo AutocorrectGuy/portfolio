@@ -32,7 +32,9 @@ export default function Messenger() {
   }
 
   return (
-    <div className={`${open ? "bottom-0" : "bottom-10"} fixed right-10 rounded-l-full rounded-br-full`}
+    <div className={`
+      ${open ? "bottom-0" : "bottom-10 shaking-messenger"} 
+      fixed right-10 rounded-l-full rounded-br-full`}
       onMouseEnter={() => { setHover(true) }}
       onMouseLeave={() => { setHover(false) }}
     >
